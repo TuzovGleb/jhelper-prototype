@@ -9,7 +9,9 @@
 
 ## Как открыть
 
-Из корня `Code/jhelper`:
+**Онлайн:** https://tuzovgleb.github.io/jhelper-prototype/
+
+**Локально** — из корня `Code/jhelper`:
 
 ```bash
 python -m http.server 8010 --bind 127.0.0.1 --directory prototype
@@ -17,7 +19,11 @@ python -m http.server 8010 --bind 127.0.0.1 --directory prototype
 
 Дальше — `http://localhost:8010`. Конфигурация уже добавлена в `.claude/launch.json` под именем `jhelper-prototype`.
 
-Открывать двойным кликом по `index.html` нельзя: ссылки корне-абсолютные (`/tarify`, `/oferta`), они работают только под сервером. Так сделано намеренно — URL совпадают с продакшен-роутами, которые проверяет CloudPayments.
+### Про ссылки
+
+Ссылки внутри сайта — относительные (`tarify/`, `../oferta/`, `../assets/…`). Так страницы работают и на GitHub Pages под подпутём `/jhelper-prototype/`, и на домене-корне.
+
+**При переносе на jhelper.ru URL получаются ровно те, что нужны:** `/tarify`, `/oferta`, `/privacy`, `/rekvizity` — те самые адреса, которые проверяет мониторинг платёжного сервиса. Относительные ссылки на домене-корне резолвятся в них один в один, менять ничего не надо.
 
 ---
 
