@@ -605,8 +605,39 @@
 
 /* ---------- 9. FAQ ---------- */
 
+/* Заголовок слева, вопросы справа — иначе аккордеон висит узкой
+   колонкой в левой половине, а справа остаётся пустое поле. */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .faq-grid {
+    grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+    gap: 64px;
+    align-items: start;
+  }
+  .faq-head { position: sticky; top: 96px; }
+}
+
+.faq-head .sec-title { margin-bottom: 16px; }
+
+.faq-head p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-card-body);
+  max-width: 320px;
+}
+
+.faq-head a {
+  color: var(--brand-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .faq {
-  max-width: 860px;
   border-top: 1px solid var(--border-soft);
 }
 
