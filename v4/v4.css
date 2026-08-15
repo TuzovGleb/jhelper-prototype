@@ -1,0 +1,478 @@
+/* ============================================================
+   Джейхелпер — версия 2 лендинга
+   Опирается на ../assets/tokens.css и ../assets/landing.css.
+   Здесь только блоки, которых нет в первой версии.
+   Палитра и шрифты те же — ни одного нового цвета.
+   ============================================================ */
+
+/* ---------- Тёмная полоса «Текущий индекс системы» ---------- */
+
+.index-band {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.index-band .glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 300px at 85% 0%, rgba(168, 118, 62, .10), transparent 62%),
+    radial-gradient(600px 260px at 5% 100%, rgba(122, 46, 46, .20), transparent 65%);
+}
+
+.index-band .container-x { position: relative; z-index: 1; }
+
+.index-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
+  margin-bottom: 20px;
+}
+
+.index-row {
+  display: grid;
+  gap: 24px 32px;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+  align-items: end;
+}
+
+.index-item .n {
+  display: block;
+  font-family: var(--font-serif-family);
+  font-weight: 500;
+  letter-spacing: -.012em;
+  line-height: 1.05;
+  color: #fff;
+  font-size: clamp(26px, 3.2vw, 40px);
+}
+
+.index-item.small .n { font-size: clamp(22px, 2.2vw, 28px); }
+
+.index-item .c {
+  display: block;
+  margin-top: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
+}
+
+.index-foot {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(250, 250, 247, .14);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--on-dark-muted);
+}
+
+.index-foot svg { color: var(--secondary-accent); flex: none; }
+
+/* ---------- «Что внутри индекса» — таблица покрытия ---------- */
+
+.coverage {
+  display: grid;
+  gap: 0 64px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .coverage { grid-template-columns: 1fr 1fr; }
+}
+
+.cov-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.cov-row .k {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.cov-row .v {
+  font-family: var(--font-serif-family);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -.012em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.cov-note {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Блок «текст слева, доказательство справа» ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Без min-width:0 grid-элемент раздувается до min-content своего
+   содержимого и вылезает за трек на узких экранах. */
+.split-copy,
+.split-visual { min-width: 0; }
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 64px;
+  }
+  .split.reverse .split-copy { order: 2; }
+  .split.reverse .split-visual { order: 1; }
+}
+
+.split-copy h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin-bottom: 20px;
+}
+
+.split-copy p {
+  font-size: 16.5px;
+  line-height: 1.62;
+  color: var(--text-card-body);
+  max-width: 520px;
+}
+
+.split-copy p + p { margin-top: 14px; }
+
+.split-copy em {
+  font-family: var(--font-serif-family);
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.split-copy strong { font-weight: 600; color: var(--text-primary); }
+
+/* ---------- Карточка «Ответ ассистента» ---------- */
+
+.answer-card { padding: 22px; }
+
+.answer-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 16px;
+}
+
+.answer-text {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--text-card-list);
+  margin-bottom: 14px;
+}
+
+.case-row {
+  display: block;
+  background: var(--bg-soft);
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  transition: background .15s;
+}
+
+.case-row:hover { background: #EDEBE3; }
+
+.case-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.case-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.case-top svg { flex: none; margin-top: 3px; color: var(--text-muted); }
+
+.case-meta {
+  margin-top: 5px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.verdict { font-weight: 600; }
+.verdict.win { color: var(--success); }
+.verdict.lose { color: var(--brand-accent); }
+
+.checked-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  background: rgba(45, 122, 78, .09);
+  color: var(--success);
+  border-radius: var(--r-pill);
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---------- Карточка статьи закона ---------- */
+
+.law-card { padding: 22px; }
+
+.law-title {
+  font-family: var(--font-serif-family);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -.012em;
+  margin-bottom: 4px;
+}
+
+.law-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--success);
+  margin-bottom: 14px;
+}
+
+.law-text {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-card-list);
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border-radius: 9px;
+  border-left: 3px solid var(--brand-accent);
+}
+
+.law-src {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Карточка готового документа ---------- */
+
+.file-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+}
+
+.file-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--brand-accent-bg);
+  color: var(--brand-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.file-name { font-size: 15px; font-weight: 500; }
+.file-meta { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+
+.file-dl {
+  margin-left: auto;
+  flex: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-accent);
+  white-space: nowrap;
+}
+
+/* ---------- Тёмная карточка «18 команд» ---------- */
+
+.cmd-card {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  border-radius: var(--r-card);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.cmd-card h3 {
+  font-size: 19px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.cmd-count {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(250, 250, 247, .14);
+}
+
+.cmd-count .n {
+  background: var(--brand-accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 4px 9px;
+  flex: none;
+}
+
+.cmd-count .t { font-size: 14px; color: var(--text-on-dark); }
+
+.cmd-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: 12px 20px;
+  list-style: none;
+}
+
+.cmd-list li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--on-dark-muted);
+}
+
+.cmd-list svg { color: var(--brand-accent-bg); flex: none; opacity: .75; }
+
+/* ---------- «Правила, зашитые в систему» ---------- */
+
+.rules {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  margin-top: 40px;
+}
+
+.rule {
+  border-left: 2px solid var(--brand-accent);
+  padding: 4px 0 4px 16px;
+}
+
+.rule .k {
+  font-family: var(--font-serif-family);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -.012em;
+  display: block;
+}
+
+.rule .v {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  display: block;
+}
+
+/* ---------- Сравнение с бесплатной нейросетью ---------- */
+
+.vs {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-card);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.vs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border-soft);
+}
+
+.vs-row:first-child { border-top: 0; }
+
+.vs-head { background: var(--bg-soft); }
+
+.vs-cell {
+  padding: 18px 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-card-body);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.vs-cell.ours {
+  background: var(--brand-accent-bg);
+  color: var(--text-card-list);
+  border-left: 1px solid var(--border-soft);
+}
+
+.vs-head .vs-cell {
+  font-family: var(--font-serif-family);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -.012em;
+  color: var(--text-primary);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.vs-head .vs-cell.ours { background: var(--brand-accent); color: #fff; }
+
+.vs-crit {
+  grid-column: 1 / -1;
+  padding: 16px 22px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.vs-ico { flex: none; margin-top: 2px; }
+.vs-cell .vs-ico { color: var(--text-muted); }
+.vs-cell.ours .vs-ico { color: var(--success); }
+
+@media (max-width: 720px) {
+  .vs-head { display: none; }
+  .vs-row { grid-template-columns: 1fr; }
+  .vs-cell.ours { border-left: 0; }
+  .vs-cell::before {
+    content: "Бесплатная нейросеть";
+    display: block;
+    flex: none;
+    width: 108px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+  .vs-cell.ours::before { content: "Джейхелпер"; color: var(--brand-accent); }
+  .vs-ico { display: none; }
+}
