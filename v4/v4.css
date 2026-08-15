@@ -395,84 +395,107 @@
   display: block;
 }
 
-/* ---------- Сравнение с бесплатной нейросетью ---------- */
+/* ---------- Сравнение с бесплатной нейросетью: матрица ---------- */
 
 .vs {
+  display: grid;
+  grid-template-columns: 168px 1fr 1.12fr;
   border: 1px solid var(--border-strong);
   border-radius: var(--r-card);
   background: var(--bg-elevated);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
-.vs-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border-soft);
-}
+.vs > div { padding: 18px 22px; }
 
-.vs-row:first-child { border-top: 0; }
-
-.vs-head { background: var(--bg-soft); }
-
-.vs-cell {
-  padding: 18px 22px;
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--text-card-body);
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.vs-cell.ours {
-  background: var(--brand-accent-bg);
-  color: var(--text-card-list);
-  border-left: 1px solid var(--border-soft);
-}
-
-.vs-head .vs-cell {
+/* Шапка */
+.vs-h {
   font-family: var(--font-serif-family);
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 500;
   letter-spacing: -.012em;
-  color: var(--text-primary);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
-.vs-head .vs-cell.ours { background: var(--brand-accent); color: #fff; }
+.vs-h.vs-free { color: var(--text-secondary); background: var(--bg-soft); }
+.vs-h.vs-c0 { background: var(--bg-soft); }
+.vs-h.vs-ours {
+  background: var(--brand-accent);
+  color: #fff;
+}
+.vs-h.vs-ours .dot { color: #E8C8C8; }
 
-.vs-crit {
-  grid-column: 1 / -1;
-  padding: 16px 22px 0;
-  font-size: 12px;
+/* Критерий — левая колонка */
+.vs-l {
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: .07em;
   text-transform: uppercase;
-  color: var(--brand-accent);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 22px;
 }
 
-.vs-ico { flex: none; margin-top: 2px; }
-.vs-cell .vs-ico { color: var(--text-muted); }
-.vs-cell.ours .vs-ico { color: var(--success); }
+/* Ячейки */
+.vs-f, .vs-o {
+  font-size: 14.5px;
+  line-height: 1.55;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border-top: 1px solid var(--border-soft);
+}
 
-@media (max-width: 720px) {
-  .vs-head { display: none; }
-  .vs-row { grid-template-columns: 1fr; }
-  .vs-cell.ours { border-left: 0; }
-  .vs-cell::before {
-    content: "Бесплатная нейросеть";
-    display: block;
+.vs-f { color: var(--text-secondary); }
+
+.vs-o {
+  background: var(--brand-accent-bg);
+  color: var(--text-card-list);
+  border-top-color: rgba(122, 46, 46, .12);
+}
+
+.vs-ico { flex: none; margin-top: 3px; }
+.vs-f .vs-ico { color: var(--text-muted); }
+.vs-o .vs-ico { color: var(--brand-accent); }
+
+@media (max-width: 760px) {
+  .vs { grid-template-columns: 1fr; }
+  .vs-h { display: none; }
+  .vs-l { border-top: 1px solid var(--border-strong); padding-bottom: 6px; }
+  .vs > .vs-l:first-of-type { border-top: 0; }
+  .vs-f { border-top: 0; padding-top: 0; padding-bottom: 10px; }
+  .vs-o { border-top: 0; border-radius: 0; }
+  .vs-o::after {
+    content: "Джейхелпер";
+    order: -1;
     flex: none;
-    width: 108px;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
-    letter-spacing: .05em;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 3px;
+    color: var(--brand-accent);
+    margin-top: 4px;
   }
-  .vs-cell.ours::before { content: "Джейхелпер"; color: var(--brand-accent); }
-  .vs-ico { display: none; }
 }
+
+/* ---------- Компактнее вертикальный ритм (правка 15.08) ---------- */
+
+.section { padding: 52px 0; }
+@media (min-width: 640px) { .section { padding: 78px 0; } }
+
+.sec-title { margin-bottom: 34px; }
+.sec-title.with-lede { margin-bottom: 14px; }
+.sec-lede { margin-bottom: 34px; }
+
+.hero { padding: 40px 0 48px; }
+@media (min-width: 640px) { .hero { padding: 56px 0 64px; } }
+
+.cta-dark { padding: 56px 0; }
+@media (min-width: 640px) { .cta-dark { padding: 80px 0; } }
+
+.split { gap: 32px; }
+@media (min-width: 960px) { .split { gap: 52px; } }
+
+.index-band { padding: 34px 0; }
