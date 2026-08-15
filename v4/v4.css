@@ -395,11 +395,9 @@
   display: block;
 }
 
-/* ---------- Сравнение с бесплатной нейросетью: матрица ---------- */
+/* ---------- Сравнение с бесплатной нейросетью ---------- */
 
 .vs {
-  display: grid;
-  grid-template-columns: 168px 1fr 1.12fr;
   border: 1px solid var(--border-strong);
   border-radius: var(--r-card);
   background: var(--bg-elevated);
@@ -407,77 +405,72 @@
   overflow: hidden;
 }
 
-.vs > div { padding: 18px 22px; }
+.vs-hrow, .vs-row {
+  display: grid;
+  grid-template-columns: 1fr 1.06fr;
+}
 
-/* Шапка */
 .vs-h {
   font-family: var(--font-serif-family);
-  font-size: 16.5px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: -.012em;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 20px 28px;
 }
 
-.vs-h.vs-free { color: var(--text-secondary); background: var(--bg-soft); }
-.vs-h.vs-c0 { background: var(--bg-soft); }
-.vs-h.vs-ours {
-  background: var(--brand-accent);
-  color: #fff;
-}
+.vs-h.vs-free { background: var(--bg-soft); color: var(--text-secondary); }
+.vs-h.vs-ours { background: var(--brand-accent); color: #fff; }
 .vs-h.vs-ours .dot { color: #E8C8C8; }
 
-/* Критерий — левая колонка */
-.vs-l {
+.vs-row > div { border-top: 1px solid var(--border-soft); padding: 22px 28px; }
+
+.vs-f { background: var(--bg-elevated); }
+
+.vs-crit {
   font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: .07em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--text-secondary);
-  border-top: 1px solid var(--border-soft);
-  padding-top: 22px;
+  color: var(--brand-accent);
+  margin-bottom: 9px;
 }
 
-/* Ячейки */
-.vs-f, .vs-o {
-  font-size: 14.5px;
+.vs-txt, .vs-o {
+  font-size: 15px;
   line-height: 1.55;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
-  border-top: 1px solid var(--border-soft);
 }
 
-.vs-f { color: var(--text-secondary); }
+.vs-txt { color: var(--text-secondary); }
 
 .vs-o {
   background: var(--brand-accent-bg);
   color: var(--text-card-list);
-  border-top-color: rgba(122, 46, 46, .12);
+  border-top-color: rgba(122, 46, 46, .12) !important;
 }
 
-.vs-ico { flex: none; margin-top: 3px; }
-.vs-f .vs-ico { color: var(--text-muted); }
-.vs-o .vs-ico { color: var(--brand-accent); }
+.vs-ic {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.vs-txt .vs-ic { background: var(--bg-soft); color: var(--text-muted); }
+.vs-o .vs-ic { background: var(--brand-accent); color: #fff; }
 
 @media (max-width: 760px) {
-  .vs { grid-template-columns: 1fr; }
-  .vs-h { display: none; }
-  .vs-l { border-top: 1px solid var(--border-strong); padding-bottom: 6px; }
-  .vs > .vs-l:first-of-type { border-top: 0; }
-  .vs-f { border-top: 0; padding-top: 0; padding-bottom: 10px; }
-  .vs-o { border-top: 0; border-radius: 0; }
-  .vs-o::after {
-    content: "Джейхелпер";
-    order: -1;
-    flex: none;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--brand-accent);
-    margin-top: 4px;
-  }
+  .vs-hrow { display: none; }
+  .vs-row { grid-template-columns: 1fr; }
+  .vs-row > .vs-f { border-top: 1px solid var(--border-strong); padding-bottom: 14px; }
+  .vs-row:first-of-type > .vs-f { border-top: 0; }
+  .vs-o { border-top: 0 !important; padding-top: 14px; }
 }
 
 /* ---------- Компактнее вертикальный ритм (правка 15.08) ---------- */
@@ -499,3 +492,9 @@
 @media (min-width: 960px) { .split { gap: 52px; } }
 
 .index-band { padding: 34px 0; }
+
+/* Блок сравнения ближе к hero */
+.hero { padding-bottom: 30px; }
+@media (min-width: 640px) { .hero { padding: 52px 0 38px; } }
+#vs-free { padding-top: 44px; }
+@media (min-width: 640px) { #vs-free { padding-top: 58px; } }
