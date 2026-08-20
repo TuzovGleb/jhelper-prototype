@@ -708,9 +708,37 @@
 <script>
 (function () {
   var box = document.getElementById('revScroll');
-  var step = function () { var c = box.querySelector('.review'); return c ? c.getBoundingClientRect().width + 20 : 400; };
-  document.getElementById('revPrev').addEventListener('click', function () { box.scrollBy({ left: -step(), behavior: 'smooth' }); });
-  document.getElementById('revNext').addEventListener('click', function () { box.scrollBy({ left: step(), behavior: 'smooth' }); });
+  var GAP = 20;
+
+  /* Бесконечная лента: три копии набора, старт со средней.
+     Когда позиция уходит из средней трети, перематываем ровно
+     на ширину набора — контент по модулю набора идентичен,
+     прыжок кратен шагу снапа и глазу не виден. */
+  var originals = Array.prototype.slice.call(box.children);
+  for (var pass = 0; pass < 2; pass++) {
+    originals.forEach(function (c) { box.appendChild(c.cloneNode(true)); });
+  }
+
+  var setWidth = 0;
+  var measure = function () {
+    setWidth = 0;
+    originals.forEach(function (c) { setWidth += c.getBoundingClientRect().width + GAP; });
+  };
+  var step = function () { return box.querySelector('.review').getBoundingClientRect().width + GAP; };
+
+  var normalize = function () {
+    if (!setWidth) return;
+    if (box.scrollLeft < setWidth * 0.5) box.scrollLeft += setWidth;
+    else if (box.scrollLeft > setWidth * 1.5) box.scrollLeft -= setWidth;
+  };
+
+  measure();
+  box.scrollLeft = setWidth;
+  box.addEventListener('scroll', normalize, { passive: true });
+  window.addEventListener('resize', function () { measure(); box.scrollLeft = setWidth; });
+
+  document.getElementById('revPrev').addEventListener('click', function () { normalize(); box.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  document.getElementById('revNext').addEventListener('click', function () { normalize(); box.scrollBy({ left: step(), behavior: 'smooth' }); });
 })();
 </script>
 </body>
