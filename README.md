@@ -9,7 +9,11 @@
 
 ## Версии лендинга
 
-**Актуальная — [версия 5](https://tuzovgleb.github.io/jhelper-prototype/v5/)** (`v5/`). Отличия от v4 — решения от 16.08:
+**Релиз (16.08) — версия 5 в корне сайта: https://tuzovgleb.github.io/jhelper-prototype/**
+
+Корень (`index.html` + `v5.css`) — копия v5 без служебной плашки-переключателя. Именно эту ссылку отдавать наружу. Архив итераций: [/v1/](https://tuzovgleb.github.io/jhelper-prototype/v1/) · [/v2/](https://tuzovgleb.github.io/jhelper-prototype/v2/) · [/v3/](https://tuzovgleb.github.io/jhelper-prototype/v3/) · [/v4/](https://tuzovgleb.github.io/jhelper-prototype/v4/) · [/v5/](https://tuzovgleb.github.io/jhelper-prototype/v5/) (с плашкой). Правки вносить в корень; v1–v5 — история, не трогать.
+
+**Версия 5** (`v5/`). Отличия от v4 — решения от 16.08:
 
 - тёмная полоса базы: вместо «95 регионов» и «25 кодексов · 1 108 ФЗ» — **«2002–2026 · период практики»** и **«Все инстанции · от районного суда до ВС РФ»** (важное для юриста: глубина архива и вертикаль судов, а не техническая статистика);
 - блок «Какая практика в базе» сжат с таблицы 2×4 до **трёх крупных цифр** по видам судопроизводства (5,9 млн гражданских / 2,2 млн арбитражных / 313 тыс. уголовных) с подписью, какие суды внутри; разбивка по инстанциям и период из таблицы убраны — период переехал в полосу, вертикаль инстанций заявлена там же;
@@ -33,7 +37,7 @@
 
 | | Версия 1 | Версия 2 | Версия 3 — рабочая |
 |---|---|---|---|
-| Адрес | [/jhelper-prototype/](https://tuzovgleb.github.io/jhelper-prototype/) | [/jhelper-prototype/v2/](https://tuzovgleb.github.io/jhelper-prototype/v2/) | [/jhelper-prototype/v3/](https://tuzovgleb.github.io/jhelper-prototype/v3/) |
+| Адрес | [/jhelper-prototype/v1/](https://tuzovgleb.github.io/jhelper-prototype/v1/) | [/jhelper-prototype/v2/](https://tuzovgleb.github.io/jhelper-prototype/v2/) | [/jhelper-prototype/v3/](https://tuzovgleb.github.io/jhelper-prototype/v3/) |
 | Файлы | `index.html` | `v2/index.html` + `v2/v2.css` | `v3/index.html` + `v3/v3.css` |
 | H1 | «Искусственный интеллект для юридической практики» | «Практика, нормативка и документы — с проверяемыми ссылками» | H1 из v1, структура из v2 |
 | Логика | от продукта: возможности → сценарии → доказательство | от доказательства: индекс → инструменты → покрытие → как проверить | v2 + правки от 13.08 |

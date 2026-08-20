@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+
+<title>Джейхелпер — ИИ для юридической практики со ссылками на первоисточники</title>
+<meta name="description" content="Искусственный интеллект для работы с юридическими документами: анализ материалов, подготовка документов, поиск судебной практики. Ответы с опорой на нормативные акты и практику — со ссылкой на первоисточник. Более 8 млн судебных дел в базе. Для российских юристов и адвокатов.">
+<meta name="keywords" content="юридический ИИ, помощник юриста, поиск судебной практики, анализ документов, подготовка исков, работа с договорами, искусственный интеллект для юристов и адвокатов, ссылки на первоисточники">
+<!-- noindex — только для прототипа на github.io: документы ещё с заглушками.
+     На jhelper.ru вернуть: <meta name="robots" content="index, follow"> -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="ООО «Цифровые правовые решения»">
+
+<!-- TODO перед публикацией: поставить реальный код подтверждения Google Search Console
+     или удалить тег совсем. На проде сейчас висит заглушка
+     <meta name="google-site-verification" content="your-google-verification-code"> -->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Джейхелпер">
+<meta property="og:url" content="https://jhelper.ru">
+<meta property="og:title" content="Джейхелпер — ИИ для юридической практики">
+<meta property="og:description" content="Специализированная система для российских юристов и адвокатов. Ответы с опорой на нормативные акты и судебную практику — со ссылкой на первоисточник. Более 8 млн дел в базе. 7 дней бесплатно.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Джейхелпер — ИИ для юридической практики">
+<meta name="twitter:description" content="Ответы с опорой на нормативные акты и судебную практику — со ссылкой на первоисточник. Более 8 млн дел в базе.">
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%237A2E2E'/><text x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='19' font-weight='600' fill='%23FAFAF7'>Д</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/landing.css">
+</head>
+<body>
+
+<!-- ================= ШАПКА ================= -->
+<header class="app-header" id="header">
+  <div class="container-x app-header-inner">
+    <a href="#top" class="logo">Джейхелпер<span class="dot">.</span></a>
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="#features">Возможности</a>
+        <a href="#use-cases">Сценарии</a>
+        <a href="#tarify">Тарифы</a>
+        <a href="#security">Безопасность</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#signin" class="btn btn-secondary btn-sm">Войти</a>
+      <a href="#trial" class="btn btn-primary btn-sm">Попробовать 7 дней бесплатно</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Меню" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features">Возможности</a>
+  <a href="#use-cases">Сценарии</a>
+  <a href="#tarify">Тарифы</a>
+  <a href="#security">Безопасность</a>
+  <a href="#faq">FAQ</a>
+  <a href="#signin">Войти</a>
+  <a href="#trial" class="btn btn-primary">Попробовать 7 дней бесплатно</a>
+</div>
+
+<!-- ================= 1. HERO ================= -->
+<section class="hero container-x" id="top">
+  <div class="hero-grid">
+
+    <div class="hero-copy">
+      <div class="sec-eyebrow">для российских юристов и адвокатов</div>
+      <h1>Искусственный интеллект для юридической практики</h1>
+      <p class="hero-sub">Специализированная система для российских юристов и адвокатов. Ответы с опорой на нормативные акты и судебную практику — со ссылкой на первоисточник.</p>
+
+      <div class="cta-row">
+        <a href="#trial" class="btn btn-primary">Попробовать 7 дней бесплатно</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num">8 млн+</span>
+          <span class="lbl">судебных дел в базе</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">18</span>
+          <span class="lbl">готовых команд для типовых задач</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">100%</span>
+          <span class="lbl">ответов со ссылкой на первоисточник</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Рабочий экран продукта. Свёрстан в HTML — резче на retina, читается
+         поисковиками, не требует поддержки отдельного файла.
+         ЧТОБЫ ЗАМЕНИТЬ НА СКРИНШОТ: положить PNG в assets/ и заменить весь
+         блок <div class="card-x ws">…</div> на:
+         <img src="../assets/screen-workspace.png" alt="Рабочий экран Джейхелпера"
+              class="card-x" style="padding:0;overflow:hidden;box-shadow:var(--shadow-lg)"> -->
+    <div class="card-x ws" aria-label="Рабочий экран Джейхелпера: выбор команды в деле">
+
+      <div class="ws-top">
+        <svg class="ws-back" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <div>
+          <div class="ws-title">Практика по разделу имущества</div>
+          <div class="ws-sub">1 чат</div>
+        </div>
+        <div class="ws-toggle">
+          <span class="on">⚡ Быстрая</span>
+          <span>💭 Думающая</span>
+        </div>
+      </div>
+
+      <div class="ws-body">
+        <aside class="ws-side">
+          <div class="ws-newchat">＋ Новый чат</div>
+          <div class="ws-chat"><span>Новый чат</span><span class="when">14:49</span></div>
+        </aside>
+
+        <main class="ws-main">
+          <div class="ws-h">С чего начнём?</div>
+          <div class="ws-lede">Выберите команду, опишите ситуацию своими словами — или загрузите документы.</div>
+
+          <div class="ws-cards">
+            <div class="ws-card">
+              <div class="ws-card-top">
+                <span class="ws-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span>
+              </div>
+              <h4>Практика по делу</h4>
+              <p>Решения по аналогичным спорам с реквизитами и обоими подходами, если практика противоречива.</p>
+            </div>
+
+            <div class="ws-card">
+              <div class="ws-card-top">
+                <span class="ws-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M7 7l-3 6h6L7 7zM17 7l-3 6h6l-3-6z"/></svg></span>
+              </div>
+              <h4>Перспектива дела</h4>
+              <p>Шансы по существу: вероятные сценарии, сильные и слабые места позиции, ключевые риски.</p>
+            </div>
+
+            <div class="ws-card">
+              <div class="ws-card-top">
+                <span class="ws-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></span>
+                <span class="ws-tag">Нужен документ</span>
+              </div>
+              <h4>Хронология дела</h4>
+              <p>Таймлайн из материалов: даты, стороны, суммы — каждый факт с цитатой.</p>
+            </div>
+
+            <div class="ws-card">
+              <div class="ws-card-top">
+                <span class="ws-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+                <span class="ws-tag">Нужен документ</span>
+              </div>
+              <h4>Правовая позиция</h4>
+              <p>Каркас позиции: тезис → доказательство → норма → практика → контраргумент оппонента.</p>
+            </div>
+          </div>
+
+          <div class="ws-all">Все 18 команд →</div>
+
+          <div class="ws-compose">
+            <span class="ws-chip">⚡ Команды</span>
+            <div class="ws-input">
+              <span class="ph">Опишите ситуацию, вопрос или запрос…</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted)"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+              <span class="ws-send"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
+            </div>
+            <div class="ws-hint">Enter — отправить · Shift+Enter — новая строка</div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 2. ОТВЕТ С ИСТОЧНИКОМ ================= -->
+<section class="section section-soft" id="proof">
+  <div class="container-x">
+
+    <div class="proof-grid">
+      <div class="proof-copy">
+        <div class="sec-eyebrow">Проверяемость</div>
+        <h2>Каждый ответ — со ссылкой на первоисточник</h2>
+        <p>Джейхелпер работает на официальных текстах опубликованных нормативных актов и на базе судебной практики — более 8 млн дел. В каждом ответе он даёт ссылку на первоисточник: и на норму, и на конкретное решение.</p>
+        <p>Это главное отличие от универсальных чат-ботов: вы получаете не пересказ, а норму и практику, которые можно открыть, проверить и приложить к позиции.</p>
+      </div>
+
+      <div class="card-x answer-mock" aria-label="Пример ответа системы со ссылкой на первоисточник">
+        <div class="mock-bar">
+          <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+          <span class="mock-url">jhelper.ru / дело А40-128945/2025</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-q">Какой срок исковой давности по требованию о взыскании неустойки по договору поставки?</div>
+
+          <div class="mock-a">
+            <p>Общий срок исковой давности — три года (п. 1 ст. 196 ГК РФ).</p>
+            <p>По неустойке срок считается отдельно по каждому просроченному платежу: требование возникает заново за каждый период, поэтому часть начислений может оказаться за пределами трёхлетнего срока, а часть — внутри него.</p>
+          </div>
+
+          <div class="mock-cite">
+            <div class="mock-cite-label">Норма</div>
+            <div class="mock-cite-text">Гражданский кодекс РФ, часть первая, ст. 196 п. 1: «Общий срок исковой давности составляет три года со дня, определяемого в соответствии со статьёй 200 настоящего Кодекса…»</div>
+            <a class="src-chip" href="http://publication.pravo.gov.ru/" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+              publication.pravo.gov.ru
+            </a>
+          </div>
+
+          <div class="mock-cite">
+            <div class="mock-cite-label">Судебная практика</div>
+            <div class="mock-cite-text">Постановление Пленума Верховного Суда РФ от 29.09.2015 № 43, п. 25: срок исковой давности по требованию о взыскании неустойки исчисляется отдельно по каждому просроченному платежу.</div>
+            <a class="src-chip" href="https://vsrf.ru/" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+              vsrf.ru
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. ВОЗМОЖНОСТИ ================= -->
+<section class="section" id="features">
+  <div class="container-x">
+    <div class="sec-eyebrow">Возможности</div>
+    <h2 class="sec-title">Что вы получаете в Джейхелпере</h2>
+
+    <div class="card-grid">
+
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+        <h3 class="card-title">Работа с документами</h3>
+        <p class="card-text">Загружайте документы по делу и задавайте вопросы. ИИ проанализирует содержание и даст ответы на основе ваших материалов.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>До 100 документов в одном деле</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ИИ отвечает на основе загруженных файлов</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Поддержка PDF, Word, текстовых файлов</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Быстрый поиск информации в документах</span></li>
+        </ul>
+      </article>
+
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+        <h3 class="card-title">Помощь в подготовке документов</h3>
+        <p class="card-text">ИИ помогает составить черновик заключения, иска, жалобы или другого документа с учётом российского права.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Составление черновиков документов</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Проверка на типичные ошибки</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Предложения по структуре и содержанию</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Экспорт готового текста в Word</span></li>
+        </ul>
+      </article>
+
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/></svg></span>
+        <h3 class="card-title">Организация по делам</h3>
+        <p class="card-text">Создавайте отдельные дела (проекты), в каждом — свои документы и чаты. Всё структурировано и легко найти.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Неограниченное количество дел</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Каждое дело со своими документами</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>История всех чатов сохраняется</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Быстрое переключение между делами</span></li>
+        </ul>
+      </article>
+
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M7 7l-3 6h6L7 7zM17 7l-3 6h6l-3-6zM8 21h8"/></svg></span>
+        <h3 class="card-title">Понимание юридического контекста</h3>
+        <p class="card-text">Модели специально настроены для работы с российским правом — не нужно объяснять базовые понятия.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Знание российского законодательства</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Понимание юридической терминологии</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Адекватные ответы без лишних пояснений</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Учёт специфики российской практики</span></li>
+        </ul>
+      </article>
+
+      <!-- Карточка «Конфиденциальность данных» убрана: она была слабейшей в блоке
+           (2 пункта против 4). Тема вынесена в отдельный блок «Безопасность». ТЗ п. 2.3 -->
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg></span>
+        <h3 class="card-title">Ответы с опорой на закон и практику</h3>
+        <p class="card-text">Система отвечает не «по памяти», а по официальным текстам нормативных актов и по базе судебных решений — и показывает, откуда взята каждая норма и каждый вывод.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Ссылка на первоисточник в каждом ответе</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Официальные тексты НПА в актуальных редакциях</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Более 8 млн судебных дел с реквизитами</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Оба подхода, если практика противоречива</span></li>
+        </ul>
+      </article>
+
+      <article class="card-x stack-12">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9zM19 15l.9 2.1 2.1.9-2.1.9L19 21l-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+        <h3 class="card-title">Простота использования</h3>
+        <p class="card-text">Не нужно разбираться в технологиях. Загрузили документы, задали вопрос — получили ответ.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Интуитивно понятный интерфейс</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Не требуется технических знаний</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Работает сразу после регистрации</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Оплата в рублях без VPN</span></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. СЦЕНАРИИ ================= -->
+<section class="section section-soft" id="use-cases">
+  <div class="container-x">
+    <div class="sec-eyebrow">Сценарии</div>
+    <h2 class="sec-title">Как это работает в реальной практике</h2>
+
+    <div class="card-grid">
+      <article class="card-x">
+        <div class="scn-num">01</div>
+        <h3 class="scn-title">Анализ материалов дела</h3>
+        <p class="card-text">Загрузите все документы по делу и спросите: «Какие у нас сильные аргументы?» или «Что может спросить суд?». ИИ проанализирует материалы и ответит.</p>
+      </article>
+
+      <article class="card-x">
+        <div class="scn-num">02</div>
+        <h3 class="scn-title">Проверка договоров</h3>
+        <p class="card-text">Загрузите договор и спросите: «Какие риски в этом договоре?» или «Что нужно изменить?». Получите конкретные рекомендации.</p>
+      </article>
+
+      <article class="card-x">
+        <div class="scn-num">03</div>
+        <h3 class="scn-title">Составление документов</h3>
+        <p class="card-text">Скажите: «Составь исковое заявление о взыскании долга» или «Напиши возражения на иск». ИИ подготовит черновик с учётом вашей ситуации.</p>
+      </article>
+
+      <article class="card-x">
+        <div class="scn-num">04</div>
+        <h3 class="scn-title">Поиск в документах</h3>
+        <p class="card-text">Если у вас много документов, спросите: «Где упоминается срок оплаты?» или «Что написано про неустойку?». ИИ быстро найдёт нужное.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. ТАРИФЫ ================= -->
+<section class="section" id="tarify">
+  <div class="container-x">
+    <div class="sec-eyebrow">Тарифы</div>
+    <h2 class="sec-title with-lede">Цены — на сайте, без «обсудим на созвоне»</h2>
+    <p class="sec-lede">Качество моделей одинаковое на всех тарифах. Отличается только объём обращений и приоритет обработки.</p>
+
+    <div class="card-grid">
+
+      <article class="card-x plan">
+        <div class="plan-head"><h3 class="plan-name">Пробный период</h3></div>
+        <div class="plan-price">0 ₽<span class="per"> / 7 дней</span></div>
+        <p class="plan-desc">Объём тарифа «Базовый», чтобы проверить систему на своих документах.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>7 дней полного доступа</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Без привязки карты</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Автоматического перехода на платный тариф нет</span></li>
+        </ul>
+        <a href="#trial" class="btn btn-secondary btn-block">Попробовать бесплатно</a>
+      </article>
+
+      <article class="card-x plan">
+        <div class="plan-head"><h3 class="plan-name">Базовый</h3></div>
+        <div class="plan-price">2 900 ₽<span class="per"> / мес</span></div>
+        <div class="plan-vat">в том числе НДС 22%</div>
+        <p class="plan-desc">Для юриста с личной практикой.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>200 обращений в месяц</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Подготовка документа и разбор дела — 5 обращений</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Полный доступ к базе практики и НПА</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Ссылка на первоисточник в каждом ответе</span></li>
+        </ul>
+        <a href="#pay" class="btn btn-primary btn-block">Подключить</a>
+      </article>
+
+      <article class="card-x plan plan-featured">
+        <div class="plan-head">
+          <h3 class="plan-name">Полный</h3>
+          <span class="badge">Для активной практики</span>
+        </div>
+        <div class="plan-price">7 900 ₽<span class="per"> / мес</span></div>
+        <div class="plan-vat">в том числе НДС 22%</div>
+        <p class="plan-desc">Для юриста с высокой нагрузкой.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Без лимита обращений (добросовестное использование)</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Приоритет в очереди обработки</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Один пользователь</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Всё из «Базового»</span></li>
+        </ul>
+        <a href="#pay" class="btn btn-primary btn-block">Подключить</a>
+      </article>
+
+      <article class="card-x plan">
+        <div class="plan-head"><h3 class="plan-name">Для компаний</h3></div>
+        <div class="plan-price">по запросу</div>
+        <p class="plan-desc">От трёх сотрудников — не по оферте, а по договору.</p>
+        <ul class="check-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>От 3 сотрудников</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Отдельный договор</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Счёт и закрывающие документы</span></li>
+        </ul>
+        <a href="#call" class="btn btn-secondary btn-block">Обсудить</a>
+      </article>
+
+    </div>
+
+    <p class="pricing-fineprint">
+      Подписка продлевается автоматически, отключить можно в личном кабинете в любой момент.
+      Возврат в течение 14 дней с первого платежа — без объяснения причин.
+      Качество моделей одинаковое на всех тарифах.
+      Полные условия — на странице <a href="../tarify/">Тарифы</a> и в <a href="../oferta/">Публичной оферте</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ================= 6. БЕЗОПАСНОСТЬ ================= -->
+<section class="section section-soft" id="security">
+  <div class="container-x">
+    <div class="sec-eyebrow">Безопасность</div>
+    <h2 class="sec-title with-lede">Что происходит с вашими документами</h2>
+    <p class="sec-lede">Здесь только то, что можно проверить. Сертификаций ФСТЭК и записи в реестре отечественного ПО у нас пока нет — и мы их не приписываем.</p>
+
+    <div class="card-grid">
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <h3>Передача данных шифруется</h3>
+        <p>Соединение между вами и сервисом идёт по HTTPS/TLS — трафик нельзя прочитать по дороге.</p>
+      </article>
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <h3>Доступ к делу есть только у вас</h3>
+        <p>Материалы дела видны в вашем аккаунте. Другие пользователи сервиса доступа к ним не имеют.</p>
+      </article>
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+        <h3>Реквизиты карт мы не храним</h3>
+        <p>Оплата картами РФ проходит через CloudPayments. Данные карты обрабатывает платёжный сервис — к нам они не попадают (п. 5.2 оферты).</p>
+      </article>
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Работаем по 152-ФЗ</h3>
+        <p>Оператор персональных данных — ООО «Цифровые правовые решения». Что и зачем мы обрабатываем, описано в <a href="../privacy/" style="color:var(--brand-accent);text-decoration:underline;text-underline-offset:2px">Политике конфиденциальности</a>.</p>
+      </article>
+
+      <!-- ================================================================
+           ДВА ПУНКТА ЖДУТ ПОДТВЕРЖДЕНИЯ ФАКТАМИ (ТЗ п. 2.6, пробел №12).
+           Раскомментировать, только когда будет проверено:
+             1) где физически расположены серверы, на которых хранятся
+                документы пользователей;
+             2) что в договоре с LLM-провайдером написано про использование
+                переданных данных для обучения моделей.
+           Юристы это проверяют — публиковать без подтверждения нельзя.
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+        <h3>Данные хранятся и обрабатываются в России</h3>
+        <p>Серверы, на которых лежат материалы ваших дел, расположены на территории Российской Федерации.</p>
+      </article>
+
+      <article class="card-x sec-item">
+        <span class="sec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.5 5.5l13 13"/></svg></span>
+        <h3>Ваши документы не используются для обучения моделей</h3>
+        <p>Материалы, которые вы загружаете, не попадают в обучающие выборки.</p>
+      </article>
+      ================================================================ -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. ОТЗЫВЫ ================= -->
+<section class="section" id="reviews">
+  <div class="container-x">
+
+    <div class="note">
+      <strong>Не публиковать в этом виде.</strong> Блок показан, чтобы согласовать вёрстку и место в структуре. Реальные отзывы собираются на интервью с пилотными пользователями, с письменным согласием на публикацию имени (пробел №13). Юристы гуглят имена коллег — выдуманные отзывы с фотостоков доверие не поднимут, а уничтожат. Нужно 3–6 штук: минимум один от частнопрактикующего и один от юриста компании; хотя бы в одном — про страх галлюцинаций и как ссылки на первоисточник его сняли.
+    </div>
+
+    <div class="sec-eyebrow">Отзывы</div>
+    <h2 class="sec-title">Что говорят юристы</h2>
+
+    <div class="card-grid">
+
+      <article class="card-x review review-placeholder">
+        <p class="review-quote">Отзыв №1 — место для цитаты на 2–4 предложения. Формат: конкретная задача → конкретный результат («проверка договора занимала 2 часа, теперь 20 минут»), а не общие слова «отличный сервис».</p>
+        <div>
+          <div class="review-author"><span class="todo">Имя и фамилия</span></div>
+          <div class="review-role"><span class="todo">частный юрист, город</span></div>
+          <div class="review-field">Сфера: <span class="todo">банкротство / арбитраж / договорная работа</span></div>
+        </div>
+      </article>
+
+      <article class="card-x review review-placeholder">
+        <p class="review-quote">Отзыв №2 — обязательно от юриста компании (in-house). Здесь же уместно закрыть возражение №1 аудитории: как ссылки на первоисточник сняли страх галлюцинаций.</p>
+        <div>
+          <div class="review-author"><span class="todo">Имя и фамилия</span></div>
+          <div class="review-role"><span class="todo">юрист компании N, город</span></div>
+          <div class="review-field">Сфера: <span class="todo">указать</span></div>
+        </div>
+      </article>
+
+      <article class="card-x review review-placeholder">
+        <p class="review-quote">Отзыв №3 — про экономию времени в цифрах или про конкретное выигранное/подготовленное дело. Фото по желанию респондента.</p>
+        <div>
+          <div class="review-author"><span class="todo">Имя и фамилия</span></div>
+          <div class="review-role"><span class="todo">роль, город</span></div>
+          <div class="review-field">Сфера: <span class="todo">указать</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. FAQ ================= -->
+<section class="section section-soft" id="faq">
+  <div class="container-x">
+    <div class="faq-grid">
+
+      <div class="faq-head">
+        <div class="sec-eyebrow">Вопросы</div>
+        <h2 class="sec-title">Что обычно спрашивают</h2>
+        <p>Не нашли своего вопроса — напишите в <a href="https://t.me/tuzovgleb" target="_blank" rel="noopener">Telegram</a>, ответим лично.</p>
+      </div>
+
+      <div class="faq">
+
+      <details>
+        <summary>Это замена юристу?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>Нет. Джейхелпер — рабочий инструмент юриста: он ускоряет анализ материалов и подготовку документов, но решения принимаете вы. Результат работы системы — это черновик и справочный материал, а не юридическое заключение.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Откуда система берёт нормы права и практику?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>Нормы — из официальных опубликованных текстов нормативных актов, в актуальных редакциях. Практику — из базы судебных решений, в ней более 8 млн дел, включая гражданские и уголовные дела судов общей юрисдикции.</p>
+          <p>В каждом ответе — ссылка на первоисточник: и на норму, и на конкретное решение. Её можно открыть и сверить формулировку. Если практика по вопросу противоречива, система показывает оба подхода, а не выбирает удобный.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Что будет после 7 дней пробного периода?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>Ничего не спишется: карта не привязывается, платный тариф не включается автоматически. Захотите продолжить — выберете тариф и оплатите. Не захотите — доступ просто закроется.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Что такое «обращение»?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>Один вопрос к системе. Подготовка документа или разбор дела считается за 5 обращений — они требуют глубокого анализа.</p>
+          <p>На тарифе «Базовый» — 200 обращений в месяц, неизрасходованные на следующий месяц не переносятся. При исчерпании лимита предлагается переход на «Полный»; остальные функции сервиса остаются доступными (п. 5.1.1 оферты). На тарифе «Полный» лимита нет.</p>
+          <p><span class="todo">Подтвердить: жёсткий стоп или докупка пакета — пробел №8 чек-листа</span></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Как отменить подписку?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>В личном кабинете, в разделе <span class="todo">название раздела ЛК — пробел №3</span>, в один клик. Доступ сохраняется до конца оплаченного периода.</p>
+          <p>Возврат первого платежа — в течение 14 дней без объяснения причин.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Насколько защищены мои документы?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>Передача данных шифруется по HTTPS/TLS. Доступ к материалам дела есть только у вас — другие пользователи сервиса их не видят. Реквизиты банковских карт мы не получаем и не храним: их обрабатывает платёжный сервис.</p>
+          <p>Обработка персональных данных ведётся по 152-ФЗ, подробности — в <a href="../privacy/">Политике конфиденциальности</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Кто вы?
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="answer">
+          <p>ООО «Цифровые правовые решения» — российская IT-компания, ОГРН 1265200009425, ИНН 5262401930. Полные реквизиты — <a href="../rekvizity/">внизу страницы и на отдельной странице</a>.</p>
+        </div>
+      </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. CTA ================= -->
+<section class="cta-dark" id="trial">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container-x">
+    <h2>Готовы начать?</h2>
+    <p class="lede">Семь дней полного доступа на уровне тарифа «Базовый» — на ваших реальных документах и с вашей практикой.</p>
+    <div class="cta-row">
+      <a href="#signup" class="btn btn-primary">Попробовать 7 дней бесплатно</a>
+    </div>
+    <p class="fineprint">Без привязки карты. Платный тариф не включится сам.</p>
+  </div>
+</section>
+
+<!-- ================= 10. ФУТЕР ================= -->
+<footer class="site-footer">
+  <div class="container-x">
+    <div class="footer-cols">
+
+      <div>
+        <a href="#top" class="logo">Джейхелпер<span class="dot">.</span></a>
+        <p class="footer-legal">
+          ООО «Цифровые правовые решения»<br>
+          ОГРН 1265200009425 · ИНН 5262401930<br>
+          603000, Нижегородская обл., г. Нижний Новгород, ул. Богородского, д. 5, к. 3, кв. 4
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Документы</div>
+        <ul class="footer-list">
+          <li><a href="../tarify/">Тарифы</a></li>
+          <li><a href="../oferta/">Публичная оферта</a></li>
+          <li><a href="../privacy/">Политика конфиденциальности</a></li>
+          <li><a href="../rekvizity/">Реквизиты</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <ul class="footer-list">
+          <li>E-mail: <span class="todo">указать e-mail поддержки</span></li>
+          <li>Telegram: <a href="https://t.me/tuzovgleb" target="_blank" rel="noopener">@tuzovgleb</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Сервис</div>
+        <ul class="footer-list">
+          <li><a href="#features">Возможности</a></li>
+          <li><a href="#use-cases">Сценарии</a></li>
+          <li><a href="#faq">Вопросы и ответы</a></li>
+          <li><a href="#signin">Войти</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ООО «Цифровые правовые решения»</span>
+      <span class="pay-row">
+        Оплата картами РФ через CloudPayments
+        <span class="pay-chip">МИР</span>
+        <span class="pay-chip">VISA</span>
+        <span class="pay-chip">Mastercard</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/app.js"></script>
+</body>
+</html>
