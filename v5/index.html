@@ -482,9 +482,15 @@
 
     <div class="sec-eyebrow">Отзывы</div>
     <h2 class="sec-title with-lede">Что говорят юристы после месяца работы</h2>
-    <p class="sec-lede">Все пятеро — действующие подписчики. Цитаты из интервью, цифры — их собственные оценки.</p>
+    <div class="review-bar">
+      <p class="sec-lede" style="margin-bottom:0">Все пятеро — действующие подписчики. Цитаты из интервью, цифры — их собственные оценки.</p>
+      <div class="review-nav">
+        <button class="review-arrow" id="revPrev" aria-label="Предыдущие отзывы"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="review-arrow" id="revNext" aria-label="Следующие отзывы"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
 
-    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))">
+    <div class="review-scroll" id="revScroll">
 
       <article class="card-x review">
         <p class="review-quote">Отзыв на кассационную жалобу раньше занимал 15–20 часов, с сервисом ответ готовили примерно за 15 минут — и использовали процентов на 85. Погружение в новую тему — два дня вместо полутора недель.</p>
@@ -525,10 +531,14 @@
 
       <article class="card-x review">
         <p class="review-quote">Кассационная жалоба раньше занимала неделю — теперь три дня. Процессуальные документы, на которые уходили десятки часов, готовятся примерно втрое быстрее.</p>
-        <div>
-          <div class="review-author">Марина Метцлер</div>
-          <div class="review-role">адвокат</div>
-          <div class="review-field">Сфера: судебная работа, процессуальные документы</div>
+        <div class="review-head">
+          <img class="review-ava" src="../assets/reviews/metzler.jpg" alt="Марина Метцлер" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="review-ava review-ava-fb" style="display:none">ММ</span>
+          <div>
+            <div class="review-author">Марина Метцлер</div>
+            <div class="review-role">адвокат</div>
+            <div class="review-field">Сфера: судебная работа, процессуальные документы</div>
+          </div>
         </div>
       </article>
 
@@ -703,5 +713,13 @@
 </footer>
 
 <script src="../assets/app.js"></script>
+<script>
+(function () {
+  var box = document.getElementById('revScroll');
+  var step = function () { var c = box.querySelector('.review'); return c ? c.getBoundingClientRect().width + 20 : 400; };
+  document.getElementById('revPrev').addEventListener('click', function () { box.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  document.getElementById('revNext').addEventListener('click', function () { box.scrollBy({ left: step(), behavior: 'smooth' }); });
+})();
+</script>
 </body>
 </html>
